@@ -23,6 +23,7 @@ GoTalkWithACS/
 │   ├── helper/                        # HMAC, hashing, formatting utilities
 │   ├── model/                         # Payload and request models
 │   └── email.go                       # Gin route to trigger email send
+│   └── .env   
 │
 ├── LICENSE
 └── README.md
