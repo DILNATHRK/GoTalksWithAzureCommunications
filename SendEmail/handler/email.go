@@ -21,8 +21,8 @@ func SendEmailWithACS(email model.EmailNotification) error {
 	pathAndQuery := os.Getenv("PathAndQuery")
 	secret := os.Getenv("Secret")
 	resourceEndpoint := "https://" + host
-	requestURI := resourceEndpoint + pathAndQuery
 	senderAddress := os.Getenv("SenderAddress")
+	requestURI := resourceEndpoint + pathAndQuery
 
 	body := map[string]interface{}{
 		"senderAddress": senderAddress,
