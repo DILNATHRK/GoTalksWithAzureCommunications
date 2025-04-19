@@ -33,7 +33,7 @@ func SendEmailHandler(c *gin.Context) {
 	// Validation using go-playground/validator
 	if err := Validate.Struct(email); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"error":   "Validation failed",
+			"error":   "validation failed",
 			"details": err.Error(),
 		})
 		return
@@ -42,13 +42,13 @@ func SendEmailHandler(c *gin.Context) {
 	// Send email using ACS
 	if err := SendEmailWithACS(email); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"error":   "Failed to send email",
+			"error":   "failed to send email",
 			"details": err.Error(),
 		})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "Email sent successfully"})
+	c.JSON(http.StatusOK, gin.H{"message": "email sent successfully"})
 }
 
 func SendEmailWithACS(email model.EmailNotification) error {
