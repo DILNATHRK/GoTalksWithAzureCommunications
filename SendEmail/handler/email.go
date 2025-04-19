@@ -14,7 +14,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func SendEmailWithAzureAPI(email model.EmailNotification) error {
+func SendEmailWithACS(email model.EmailNotification) error {
 	godotenv.Load(".env")
 
 	host := os.Getenv("Host")

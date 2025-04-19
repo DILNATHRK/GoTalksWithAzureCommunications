@@ -19,7 +19,7 @@ func main() {
 			return
 		}
 
-		if err := handler.SendEmailWithAzureAPI(email); err != nil {
+		if err := handler.SendEmailWithACS(email); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to send email", "details": err.Error()})
 			return
 		}
