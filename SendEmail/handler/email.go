@@ -40,7 +40,7 @@ func SendEmailHandler(c *gin.Context) {
 	}
 
 	// Send email using ACS
-	if err := handler.SendEmailWithAzureAPI(email); err != nil {
+	if err := SendEmailWithACS(email); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error":   "Failed to send email",
 			"details": err.Error(),
