@@ -11,8 +11,45 @@ import (
 
 	"github.com/DILNATHRK/GoWithAzureCommunications/SendEmail/helper"
 	"github.com/DILNATHRK/GoWithAzureCommunications/SendEmail/model"
+	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
 	"github.com/joho/godotenv"
 )
+
+var Validate = validator.New()
+
+func SendEmailHandler(c *gin.Context) {
+	var email model.EmailNotification
+
+	// JSON binding
+	if err := c.ShouldBindJSON(&email); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error":   "invalid request payload",
+			"details": err.Error(),
+		})
+		return
+	}
+
+	// Validation using go-playground/validator
+	if err := Validate.Struct(email); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error":   "Validation failed",
+			"details": err.Error(),
+		})
+		return
+	}
+
+	// Send email using ACS
+	if err := handler.SendEmailWithAzureAPI(email); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error":   "Failed to send email",
+			"details": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Email sent successfully"})
+}
 
 func SendEmailWithACS(email model.EmailNotification) error {
 	godotenv.Load(".env")
