@@ -9,7 +9,7 @@
 ![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen)  
 ![License](https://img.shields.io/badge/license-MIT-yellow)  
 
-> A collection of use-case modules built with **Golang** to demonstrate how to work with [Azure Communication Services (ACS)](https://learn.microsoft.com/en-us/azure/communication-services/) – including Email, SMS, Chat, and more. 🚀
+> A collection of use-case modules built with **Golang** to demonstrate how to work with [Azure Communication Services (ACS)](https://learn.microsoft.com/en-us/azure/communication-services/). 🚀
 
 ---
 
