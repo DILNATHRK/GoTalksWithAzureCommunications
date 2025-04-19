@@ -46,7 +46,10 @@ func SendEmailWithACS(email model.EmailNotification) error {
 	contentHash := helper.ComputeContentHash(jsonData)
 
 	stringToSign := fmt.Sprintf("POST\n%s\n%s;%s;%s", pathAndQuery, date, host, contentHash)
-	signature := helper.ComputeSignature(stringToSign, secret)
+	signature, err := helper.ComputeSignature(stringToSign, secret)
+	if err != nil {
+		return fmt.Errorf("error computing signature: %w", err)
+	}
 	authHeader := fmt.Sprintf("HMAC-SHA256 SignedHeaders=x-ms-date;host;x-ms-content-sha256&Signature=%s", signature)
 
 	req, err := http.NewRequest("POST", requestURI, bytes.NewReader(jsonData))
