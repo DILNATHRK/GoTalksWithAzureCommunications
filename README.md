@@ -98,7 +98,7 @@ Want to add your own ACS module (like SMS or WhatsApp)? Awesome!
 
 ## 👨‍💻 Authors
 
-- [@yourgithub](https://github.com/yourgithub) – Maintainer
+- https://github.com/DILNATHRK – Maintainer
 
 ---
 
@@ -116,10 +116,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-### ✅ Next Steps
-
-- Replace the `your-username` and `yourgithub` placeholders.
-- Swap out dummy image links with actual screenshots or diagrams (can be hosted on GitHub or Imgur).
-- Add real modules as contributions grow.
-
-Want a diagram or banner image created for this? I can generate one too!
