@@ -104,7 +104,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🌐 Connect with Azure Communication Services
 
-> Want to explore more? Check out the official [Azure ACS Docs](https://learn.microsoft.com/en-us/azure/communication-services/).
+>  Want to explore more? Check out the official [Azure ACS Docs](https://learn.microsoft.com/en-us/azure/communication-services/).
 
 ```
 
