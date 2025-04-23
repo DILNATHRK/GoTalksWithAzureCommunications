@@ -1,9 +1,3 @@
-
----
-
-```markdown
-# 📬 GoTalkWithACS
-
 # 📬 GoTalkWithACS
 
 ![Go Version](https://img.shields.io/badge/go-1.20+-blue)
@@ -12,8 +6,6 @@
 ![License](https://img.shields.io/badge/license-MIT-yellow)
 
 > A collection of use-case modules built with **Golang** to demonstrate how to work with [Azure Communication Services (ACS)](https://learn.microsoft.com/en-us/azure/communication-services/). 🚀
-
----
 
 ## 📁 Repository Structure
 
